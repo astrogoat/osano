@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "astrogoat/osano",
+    "description": "A Osano app for Strata",
     "keywords": [
-        ":vendor_name",
+        "Astrogoat",
         "laravel",
-        ":package_slug"
+        "osano"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/astrogoat/osano",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Kristoffer Tonning",
+            "email": "tonning@gmail.com",
             "role": "Developer"
         }
     ],
@@ -37,13 +37,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "Astrogoat\\Osano\\": "src",
+            "Astrogoat\\Osano\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Astrogoat\\Osano\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -51,15 +51,19 @@
         "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "vaimo/composer-patches": true
+        }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Astrogoat\\Osano\\OsanoServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\SkeletonFacade"
+                "Osano": "Astrogoat\\Osano\\OsanoFacade"
             }
         }
     },
