@@ -5,6 +5,7 @@ namespace Astrogoat\Osano;
 use Helix\Lego\Apps\App;
 use Helix\Lego\LegoManager;
 use Spatie\LaravelPackageTools\Package;
+use Helix\Lego\Apps\Services\IncludeFrontendViews;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Astrogoat\Osano\Settings\OsanoSettings;
 
@@ -16,11 +17,11 @@ class OsanoServiceProvider extends PackageServiceProvider
             ->name('osano')
             ->settings(OsanoSettings::class)
             ->migrations([
-                __DIR__ . '/../database/migrations',
                 __DIR__ . '/../database/migrations/settings',
             ])
-            ->backendRoutes(__DIR__.'/../routes/backend.php')
-            ->frontendRoutes(__DIR__.'/../routes/frontend.php');
+            ->includeFrontendViews(function (IncludeFrontendViews $frontendViews) {
+                return $frontendViews->addToEnd('osano::script');
+            });
     }
 
     public function registeringPackage()
