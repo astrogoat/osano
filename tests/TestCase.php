@@ -2,9 +2,9 @@
 
 namespace Astrogoat\Osano\Tests;
 
+use Astrogoat\Osano\OsanoServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Astrogoat\Osano\OsanoServiceProvider;
 
 class TestCase extends Orchestra
 {

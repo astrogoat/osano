@@ -7,8 +7,8 @@ use Illuminate\Validation\Rule;
 
 class OsanoSettings extends AppSettings
 {
-     public string $account_id;
-     public string $configuration_id;
+    public string $account_id;
+    public string $configuration_id;
 
     public function rules(): array
     {
