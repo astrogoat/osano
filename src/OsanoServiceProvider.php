@@ -4,6 +4,7 @@ namespace Astrogoat\Osano;
 
 use Astrogoat\Osano\Settings\OsanoSettings;
 use Helix\Lego\Apps\App;
+use Helix\Lego\Apps\AppToken;
 use Helix\Lego\Apps\Services\IncludeFrontendViews;
 use Helix\Lego\LegoManager;
 use Spatie\LaravelPackageTools\Package;
@@ -18,6 +19,13 @@ class OsanoServiceProvider extends PackageServiceProvider
             ->settings(OsanoSettings::class)
             ->migrations([
                 __DIR__ . '/../database/migrations/settings',
+            ])
+            ->tokens([
+                AppToken::name('Cookie preferences drawer trigger')
+                    ->type(AppToken::TYPE_TEXT)
+                    ->key('cookie-preferences-drawer-trigger')
+                    ->value("event.preventDefault(); Osano.cm.showDrawer('osano-cm-dom-info-dialog-open')")
+                    ->description('To trigger the Storage/Cookie preferences drawer'),
             ])
             ->includeFrontendViews(function (IncludeFrontendViews $frontendViews) {
                 return $frontendViews->addToEnd('osano::script');
