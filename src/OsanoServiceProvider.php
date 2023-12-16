@@ -28,7 +28,7 @@ class OsanoServiceProvider extends PackageServiceProvider
                     ->description('To trigger the Storage/Cookie preferences drawer'),
             ])
             ->includeFrontendViews(function (IncludeFrontendViews $frontendViews) {
-                return $frontendViews->addToEnd('osano::script');
+                return $frontendViews->addToHead(view: 'osano::script', priority: 100);
             });
     }
 
