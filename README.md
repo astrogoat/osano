@@ -5,7 +5,7 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/astrogoat/osano/Check%20&%20fix%20styling?label=code%20style)](https://github.com/astrogoat/osano/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/astrogoat/osano.svg?style=flat-square)](https://packagist.org/packages/astrogoat/osano)
 
-Add Osano cookie consent banners to you Strata powered website.
+Add Osano cookie consent banners to your Strata powered website.
 
 ## Installation
 
