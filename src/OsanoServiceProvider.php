@@ -30,12 +30,12 @@ class OsanoServiceProvider extends PackageServiceProvider
                     ->type(AppToken::TYPE_TEXT)
                     ->key('cookie-preferences-dialog-trigger')
                     ->value("event.preventDefault(); window.Osano.cm.showDialog()")
-                    ->description('To trigger the cookie dialog aka. banner'),
+                    ->description('To trigger the cookie dialog aka. cookie consent banner'),
                 AppToken::name('Do Not Sell modal trigger')
                     ->type(AppToken::TYPE_TEXT)
-                    ->key('cookie-preferences-dialog-trigger')
+                    ->key('cookie-preferences-do-not-sell-trigger')
                     ->value("event.preventDefault(); window.Osano.cm.showDoNotSell()")
-                    ->description('To trigger the Do Not Sell preferences modal'),
+                    ->description('To trigger the "Do Not Sell" preferences modal'),
             ])
             ->includeFrontendViews(function (IncludeFrontendViews $frontendViews) {
                 return $frontendViews->addToHead(view: 'osano::script', priority: 100);
